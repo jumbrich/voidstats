@@ -1,4 +1,4 @@
-package org.deri.voidstats.trans;
+package org.semanticweb.yars.voidstats;
 
 import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.namespace.Namespace;
@@ -9,6 +9,7 @@ public interface NodeTransformer<E>{
 
 
 	public static class NoTransformer implements NodeTransformer<Node>{
+
 		public Node[] processNode(Node[] n) {
 			return n;			
 		}
@@ -64,6 +65,5 @@ public interface NodeTransformer<E>{
 		}
 
 	}
-	
 }
 
