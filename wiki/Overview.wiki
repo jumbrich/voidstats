@@ -4,7 +4,7 @@ The following is a list of options for VoidStats when executing as a jar from th
 $ java -jar voidstats-0.1-dev.jar 
 usage: voidstats
   -cp        run class partitions
-  -d <arg>   dataset name to use for analysis
+  -d <arg>   description of dataset
   -doc       count docs (requires quads)
   -h         print this help message
   -i <arg>   n-triple input file  (sorted by s-p-o; context optional)
@@ -20,7 +20,7 @@ usage: voidstats
 
 VoidStats requires that the information is sorted by subject-predicate-object.  If it is not then the pre-sort option (-s) must be specified.
 
-Dataset name (-d) is the name that will used to describe the dataset within the statistics.
+Dataset description (-d) is the name that will used within the outputted statistics.
 
 VoidStats uses on-disk storage in the form of temporary files as default.  However, if the dataset is not too large then in-memory (-im) may be specified.  In-memory will be approx. ??? faster and typically can be used on datasets with up to ??? triples, however this will vary depending on how much memory is available on your system and how many class/property partitions need to be created.
 
