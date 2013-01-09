@@ -1,7 +1,9 @@
 package org.deri.voidstats.vvoid.mem;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
+import org.deri.voidstats.Main;
 import org.deri.voidstats.anl.CountRawAnalyser;
 import org.deri.voidstats.anl.TransformAnalyser;
 import org.deri.voidstats.trans.NodeArrayFilterTransformer;
@@ -13,8 +15,12 @@ import org.deri.voidstats.vvoid.partition.PartitionAnalyser.Partition;
 import org.semanticweb.yars.nx.Resource;
 
 public class SortedInMemVoID extends InMemVoID{
+	
+	private static final Logger logger = Logger.getLogger(SortedInMemVoID.class.getName());
+	
 	public SortedInMemVoID(VoIDOptions opts) throws IOException{
 		super(opts);
+		logger.info("Creating SortedInMemVoid object...");
 	}
 	
 	protected void initialiseLists(){
