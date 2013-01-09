@@ -51,6 +51,8 @@ public abstract class PartitionAnalyser implements Analyser{
 		Partition p = partitions.get(n);
 		if(p==null){
 			String filename = URLEncoder.encode(n.toN3(),"utf-8");
+			if (filename.length() > 255)
+				filename = filename.substring(0, 255);
 			log.info("Opening partition "+filename);
 			filename = directory+"/"+filename;
 			p = new Partition(filename);

@@ -20,6 +20,7 @@ import org.apache.commons.cli.PosixParser;
 import org.deri.voidstats.vvoid.VoID;
 import org.deri.voidstats.vvoid.VoIDOptions;
 import org.deri.voidstats.vvoid.disk.OnDiskVoID;
+import org.deri.voidstats.vvoid.mem.SortedInMemVoID;
 import org.semanticweb.yars.nx.Node;
 import org.semanticweb.yars.nx.parser.Callback;
 import org.semanticweb.yars.nx.parser.NxParser;
@@ -50,6 +51,7 @@ public class Main {
 		options.addOption( "pp", false, "run property partitions" );
 		options.addOption( "cp", false, "run class partitions" );
 		options.addOption( "doc", false, "count docs (requires quads)" );
+		options.addOption( "im", false, "use in-memory storage, on-disk storage is used as default" );
 
 
 		File inputFile = null;
@@ -161,8 +163,14 @@ public class Main {
 		opts.setCountDocs(docs);
 		
 		long startTime = System.currentTimeMillis();
-		VoID v = new OnDiskVoID(opts);
-		v.run();
+		if ( line.hasOption( "im" ) ){
+			VoID v = new SortedInMemVoID(opts);
+			v.run();
+		}else{
+			VoID v = new OnDiskVoID(opts);
+			v.run();
+		}
+		
 		long endTime = System.currentTimeMillis();
 		
 		logger.info("Finished in "+(endTime-startTime)+" ms");
