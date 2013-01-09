@@ -18,6 +18,12 @@ usage: voidstats
   -u <arg>   URI pattern to include in analysis
 }}}
 
+VoidStats requires that the information is sorted by subject-predicate-object.  If it is not then the pre-sort option (-s) must be specified.
+
 VoidStats uses on-disk storage in the form of temporary files as default.  However, if the dataset is not too large then in-memory (-im) may be specified.  In-memory will be approx. ??? faster and typically can be used on datasets with up to ??? triples, however this will vary depending on how much memory is available on your system and how many class/property partitions need to be created.
 
-The latest jar can be found in the svn repository
+The latest jar can be found in the [https://voidstats.googlecode.com/svn/trunk/ svn repository].  Below is an example of a typical command:
+
+{{{
+$ java -Xmx2580M -jar voidstats-0.1-dev.jar -i dataset_unSorted.nq.gz -d dataset -o out.log -igz -s -pp -cp 2> err.log
+}}}
