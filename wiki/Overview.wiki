@@ -1,0 +1,17 @@
+The following is a list of options for Voidstats when executing from the command line:
+
+$ java -jar voidstats-0.1-dev.jar 
+usage: voidstats
+  -cp        run class partitions
+  -d <arg>   dataset name to use for analysis
+  -doc       count docs (requires quads)
+  -h         print this help message
+  -i <arg>   n-triple input file  (sorted by s-p-o; context optional)
+  -igz       if input is g-zipped
+  -im        use in-memory storage, on-disk storage is used as default
+  -o <arg>   n-triple output file
+  -ogz       if output should be g-zipped
+  -pp        run property partitions
+  -s <arg>   pre-sort input file (if not sorted by s-p-o) and output to
+            file name given.
+  -u <arg>   URI pattern to include in analysis
