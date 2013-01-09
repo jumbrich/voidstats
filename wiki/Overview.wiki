@@ -1,5 +1,6 @@
-The following is a list of options for Voidstats when executing from the command line:
+The following is a list of options for VoidStats when executing from the command line:
 
+{{{
 $ java -jar voidstats-0.1-dev.jar 
 usage: voidstats
   -cp        run class partitions
@@ -15,3 +16,6 @@ usage: voidstats
   -s <arg>   pre-sort input file (if not sorted by s-p-o) and output to
             file name given.
   -u <arg>   URI pattern to include in analysis
+}}}
+
+VoidStats uses on-disk storage in the form of temporary files as default.  However, if the dataset is not too large then in-memory (-im) may be specified.  In-memory will be approx. ??? faster and typically can be used on datasets with up to ??? triples, however this will vary depending on how much memory is available on your system and how many class/property partitions need to be created.
