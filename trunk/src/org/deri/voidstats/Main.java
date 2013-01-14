@@ -43,7 +43,7 @@ public class Main {
 		options.addOption( "i", true, "n-triple input file  (sorted by s-p-o; context optional)" );
 		options.addOption( "s", true, "pre-sort input file (if not sorted by s-p-o) and output to file name given." );
 		options.addOption( "o", true, "n-triple output file" );
-		options.addOption( "d", true, "dataset name to use for analysis" );
+		options.addOption( "d", true, "description of dataset" );
 		options.addOption( "u", true, "URI pattern to include in analysis" );
 		options.addOption( "h", false, "print this help message" );
 		options.addOption( "igz", false, "if input is g-zipped" );
@@ -86,7 +86,7 @@ public class Main {
 				CallbackNxBufferedWriter cnbw = new CallbackNxBufferedWriter(bw);
 				
 				while(si.hasNext()){
-					cnbw.processStatement(nxp.next());
+					cnbw.processStatement(si.next());
 				}
 				bw.close();
 				is.close();
