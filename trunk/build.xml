@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="voidstats" basedir=".">
 <property name="name" value="voidstats"/>
-<property name="version" value="0.2-dev"/>
+<property name="version" value="0.1-dev"/>
 <property name="src.dir" value="src"/>
 <property name="build.dir" location="build" />
 <property name="dist.dir" value="dist"/>
@@ -32,7 +32,7 @@
 	
 <!-- Compiles the java code -->
 <target name="compile" depends="clean, makedir">
-	<javac srcdir="${src.dir}" destdir="${build.dir}">
+	<javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false" debug="true" debuglevel="lines,source">
 		<classpath refid="classpath"/>
 	</javac>
 </target>	
