@@ -24,8 +24,10 @@ Dataset description (-d) is the name that will used within the outputted statist
 
 VoidStats uses on-disk storage in the form of temporary files as default.  However, if the dataset is not too large then in-memory (-im) may be specified.  In-memory will be approx. ??? faster and typically can be used on datasets with up to ??? triples, however this will vary depending on how much memory is available on your system and how many class/property partitions need to be created.
 
-The latest jar can be found in the [https://voidstats.googlecode.com/svn/trunk/ svn repository].  Below is an example of a command which analyses a dataset containing 116 million triples.  It took ??? hours in total, ??? hours to sort the data and ??? hours to run the statistics.
+The latest jar can be found [http://code.google.com/p/voidstats/downloads/list here].  Below is an example of a command which analyses a dataset containing 116 million triples.  It took ??? hours in total, ??? hours to sort the data and ??? hours to run the statistics.
 
 {{{
 $ java -Xmx2500M -jar voidstats-0.1-dev.jar -i pubData_unSorted.nq.gz -s out/pubData_sorted.nq.gz -d pubData -o out/pubData_void.log -igz -pp -cp 2> out/pubData.err.log
 }}}
+
+
